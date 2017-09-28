@@ -19,12 +19,25 @@ def check():
 
 
 
+def welkom():
+    print("Welkom bij: ")
+    print("/ __)  /__\  (  )  / __) (_  _)( ___)")
+    print("( (_-. /(__)\  )(__( (_-..-_)(   )__) ")
+    print("\___/(__)(__)(____)\___/\____) (____)  ")
 
-woord = "bilal"
+
+
+
+
+woord = "python"
 counter = 0
 gebruikte_letters = ""
 goed = ""
 
+
+welkom()
+
+print("als je het woord hebt druk dan op ? teken ")
 
 while True:
     letter = input("type een letter ")
@@ -33,7 +46,7 @@ while True:
     if lengte >= 2:
         print("Oeps het letter is lang")
     elif counter == 6:
-        print("Oooh je manetje is om het leven de woord was bilal : )))")
+        print("Oooh je manetje is om het leven de woord was python : )))")
         break
     elif letter == "?":
          raad = input("probeer het woord te raden dan: ")
@@ -48,9 +61,13 @@ while True:
         gebruikte_letters = gebruikte_letters + "," + letter
         print("goed zo de " + letter + " zit in het woord")
         goed += letter
-        print(goed)
-        if goed == woord:
-            print("hoera je hebt het woord geraden")
+        for l in woord:
+            if l in goed:
+                print (l)
+            else:
+                print("-")
+        if woord == goed:
+            print("Hoera je hebt gewonnen")
             break
     else:
         gebruikte_letters = gebruikte_letters + "," + letter
